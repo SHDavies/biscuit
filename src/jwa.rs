@@ -375,7 +375,7 @@ impl SignatureAlgorithm {
             _ => Err("Invalid secret type. A PublicKey is required".to_string())?,
         };
         let public_key_der = untrusted::Input::from(public_key.as_slice());
-        println!("{:?", public_key_der);
+        println!("{:?}", public_key_der);
 
         let verification_algorithm: &signature::VerificationAlgorithm = match *algorithm {
             SignatureAlgorithm::RS256 => &signature::RSA_PKCS1_2048_8192_SHA256,
